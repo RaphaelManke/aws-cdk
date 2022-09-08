@@ -8,12 +8,12 @@
   "scripts": {
     "pkglint": "lerna run build --scope @aws-cdk/pkglint --include-dependencies && lerna run pkglint",
     "prebuild": "node ./scripts/check-yarn-lock.js",
-    "build": "./build.sh",
     "pack": "./pack.sh",
     "compat": "./scripts/check-api-compatibility.sh",
     "bump": "./bump.sh",
     "build-all": "tsc -b",
-    "postinstall": "patch-package --error-on-fail"
+    "postinstall": "patch-package --error-on-fail",
+    "build": "turbo run build"
   },
   "devDependencies": {
     "@types/prettier": "2.6.0",
@@ -31,6 +31,7 @@
     "patch-package": "^6.4.7",
     "semver": "^6.3.0",
     "standard-version": "^9.5.0",
+    "turbo": "^1.4.5",
     "typescript": "~3.9.10"
   },
   "resolutions": {
